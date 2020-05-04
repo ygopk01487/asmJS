@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+    <script src="hotro.js"></script>
+    <script src="san_pham.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            color: black;
+            font-style: tahoma;
+            font-size: 16px;
+        }
+
+        #khung-tren {
+            width: 100%;
+            height: 45px;
+        }
+
+        #menu {
+            background-color: #6d136a;
+            margin: 0 auto;
+            width: 1200px;
+            height: 45px;
+        }
+
+        ul.root>li {
+            list-style: none;
+            float: left;
+            position: relative;
+        }
+
+        ul.root > li > a {
+            text-decoration: none;
+            color: #FFF;
+            padding: 0px 15px 0px 15px;
+            line-height: 45px;
+            display: block;
+        }
+
+        ul.root > li > a:hover {
+            background-color: orange;
+            color: red;
+
+        }
+
+        ul.submenu {
+            width: 160px;
+            background-color: #6d136a;
+            min-height: 100px;
+            display: none;
+            position: absolute;
+        }
+
+        ul.submenu li {
+            list-style: none;
+
+        }
+
+        ul.submenu li a {
+            color: #FFF;
+            text-decoration: none;
+            display: block;
+            line-height: 40px;
+            text-indent: 18px;
+        }
+
+        ul.submenu li a:hover {
+            color: red;
+            background-color: orange;
+        }
+
+        ul.root>li:hover ul.submenu {
+            display: block;
+        }
+        #menu img {
+            width: 25px;
+            float: right;
+            margin-top: 13px;
+            margin-right: 20px;
+        }
+        #khung-duoi {
+            padding: 10px 20px;
+            background-color:#777777;
+            text-align: center;
+            margin-top: 154px;
+        }
+
+        .them-san-pham {
+            width: 40%;
+            border: 1px solid #444;
+            margin: auto;
+            padding: 30px;
+            margin-top: 70px;
+            box-shadow: 2px 2px 5px #ddd;
+
+        }
+
+        .them-san-pham label,
+        input {
+            width: 100%;
+            display: block;
+        }
+
+        .them-san-pham label {
+            margin-top: 20px;
+        }
+
+        .them-san-pham input {
+            margin-top: 5px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .them-san-pham .btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #F7442E;
+            color: white;
+        }
+
+        .them-san-pham button:hover {
+            background-color: #c53624;
+
+        }
+        .them-san-pham .error {
+            font-size: 12px;
+            color: red;
+            font-style: italic;
+            height: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="khung-tren">
+            <div id="menu">
+                <ul class="root">
+                    <li><a href="home.html">Trang chủ</a></li>
+                    <li><a href="">Danh mục sản phẩm</a>
+                        <ul class="submenu">
+                            <li><a href="">Hãng Iphone</a></li>
+                            <li><a href="">Hãng Nokia</a></li>
+                            <li><a href="">Hãng SamSung</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Quần áo</a>
+                        <ul class="submenu">
+                            <li><a href="">Quần áo nam</a></li>
+                            <li><a href="">Quần áo nữ</a></li>
+                        </ul>
+                    <li><a href="them_san_pham_moi.html">Thêm sản phẩm</a></li>
+                </ul>
+                <a href="ds_gio_hang.html"><img src="images/giohang.png"></a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="them-san-pham">
+            <label for="hinhAnh">Hình ảnh sản phẩm</label>
+            <input type="text" id="hinhAnh">
+            <label for="hinhAnh" class="error" id="hien-thi-loi-ha"></label>
+    
+            <label for="ten">Tên sản phẩm</label>
+            <input type="text" id="ten">
+            <label for="ten" class="error" id="hien-thi-loi-ten"></label>
+    
+            <label for="giaTruocKhiGiam">Giá gốc</label>
+            <input type="number" id="giaTruocKhiGiam">
+            <label for="giaTruocKhiGiam" class="error" id="hien-thi-loi-gia"></label>
+    
+            <label for="phanTramGiam">Phần trăm giảm (%) (1-100)</label>
+            <input type="number" id="phanTramGiam">
+            <label for="phanTramGiam" class="error" id="hien-thi-loi-phan-tram"></label>
+    
+            <button class="btn" onclick="onClickTaoSanPham(), onClickThemSanPham()">Tạo sản phẩm</button>
+        </div>
+    </section>
+    <footer>
+        <div id="khung-duoi">
+              Copyright by @AleEdu 2020
+        </div>
+    </footer>
+
+    <script>
+        function onClickTaoSanPham() {
+            var sanPham = taoDoiTuongTuInput();
+            console.log(sanPham);
+
+
+            /* Bước 3: Lấy danh sách sản phẩm từ local storage lên */
+            var jsonDanhSachSanPham = localStorage.getItem('danhSachSanPham');
+            var danhSachSanPham = new Array();
+            var danhSachSanPham = JSON.parse(jsonDanhSachSanPham);
+            if (danhSachSanPham == null)
+                danhSachSanPham = new Array();
+            console.log('Danh sách cũ là');
+            console.log(danhSachSanPham);
+
+
+            /* Bước 4: Đưa thêm đối tượng sản phẩm được tạo ra ở bước 2 thêm vào danh sách sản phẩm */
+            danhSachSanPham.push(sanPham);
+            console.log('danh sách mới sau khi thêm là ');
+            console.log(danhSachSanPham);
+
+
+            /* Bước 5: Cập nhật lại danh sách sản phẩm vào local storage  */
+            var jsonDanhSachSanPham = JSON.stringify(danhSachSanPham);
+            localStorage.setItem('danhSachSanPham', jsonDanhSachSanPham);
+
+        }
+        function taoDoiTuongTuInput() {
+            /* Bước 1: Truy cập các node input để lấy được các thông tin: hinhAnh, ten, giaGoc, phanTramGiamGia, khuVuc */
+            var nodeHinhAnh = document.getElementById('hinhAnh');
+            var hinhAnh = nodeHinhAnh.value;
+            console.log('Hình ảnh sản phẩm: ' + hinhAnh);
+
+            var nodeTen = document.getElementById('ten');
+            var ten = nodeTen.value;
+            console.log('Tên sản phẩm: ' + ten);
+
+            var nodeGiaTruocKhiGiam = document.getElementById('giaTruocKhiGiam');
+            var giaTruocKhiGiam = parseInt(nodeGiaTruocKhiGiam.value);
+            console.log('Giá Gốc sản phẩm: ' + giaTruocKhiGiam);
+
+            var nodePhanTramGiam = document.getElementById('phanTramGiam')
+            var phanTramGiam = nodePhanTramGiam.value;
+            console.log('Giảm giá sản phẩm: ' + phanTramGiam);
+
+           
+            /* Bước 2: Tạo ra đối tượng các thuộc tính là các giá trị đã lấy từ bước 1   */
+            var sanPham = sanPhamLa(ten, hinhAnh, giaTruocKhiGiam, phanTramGiam);
+            console.log('tên sản phẩm là: ' + sanPham.ten + ' giá bán: ' + sanPham.giaSauKhiGiamLa());
+            return sanPham;
+        }
+        function onClickThemSanPham() {
+            if (kiemTraFormTaoSanPham() == true){
+
+            }
+            
+        }
+        function kiemTraFormTaoSanPham() {
+            var hople = true;
+            var nodeInputHinhAnh = document.getElementById('hinhAnh');
+            var nodeInputTen = document.getElementById('ten');
+            var nodeInputGiaGoc = document.getElementById('giaTruocKhiGiam');
+            var nodeInputPhanTramGiam = document.getElementById('phanTramGiam');
+            var hinhAnh = nodeInputHinhAnh.value;
+            var ten = nodeInputTen.value;
+            var giaTruocKhiGiam = nodeInputGiaGoc.value;
+            var phanTramGiam = nodeInputPhanTramGiam.value;
+            var nodeHienThiLoiHinhAnh = document.getElementById('hien-thi-loi-ha');
+            var nodeHienThiLoiTen = document.getElementById('hien-thi-loi-ten');
+            var nodeHienThiLoiGiaGoc = document.getElementById('hien-thi-loi-gia');
+            var nodeHienThiLoiPhanTram = document.getElementById('hien-thi-loi-phan-tram');
+            nodeHienThiLoiHinhAnh.innerHTML = '';
+            nodeHienThiLoiTen.innerHTML = '';
+            nodeHienThiLoiGiaGoc.innerHTML = '';
+            nodeHienThiLoiPhanTram.innerHTML = '';
+            if (hinhAnh == null || hinhAnh == 0) {
+                hople = false;
+                nodeHienThiLoiHinhAnh.innerHTML = 'Hình ảnh không được bỏ trống!';
+            }
+            if (ten == null || ten == 0) {
+                hople = false;
+                nodeHienThiLoiTen.innerHTML = 'Tên không được bỏ trống!';
+            }
+            if (giaTruocKhiGiam == null || giaTruocKhiGiam == 0) {
+                hople = false;
+                nodeHienThiLoiGiaGoc.innerHTML = 'Giá không được bỏ trống!';
+            }
+            if (phanTramGiam == null || phanTramGiam == 0) {
+                hople = false;
+                nodeHienThiLoiPhanTram.innerHTML = 'Phầm trăm giảm không được bỏ trống!';
+            }
+
+
+            return hople;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

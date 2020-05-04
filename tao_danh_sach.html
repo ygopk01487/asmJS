@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <script src="hotro.js"></script>
+    <script src="san_pham.js"></script>
+</head>
+<body>
+    <script>
+        /* yêu cầu 1: tạo & lưu trữ danh sách sản phẩm xuống local storage */
+        /* bươc 1: tạo danh sách sản phẩm */
+        var danhSachSanPham = taoDanhSachSanpham();
+        console.log(danhSachSanPham);
+
+        /* bước 2: chuyển danh sách sản pahảm thành json */
+        var json = JSON.stringify(danhSachSanPham);
+        console.log(json);
+
+        /* Bước 3: Lưu trữ xuóng local storage */
+        localStorage.setItem('danhSachSanPham', json);
+
+        /* YỀu caàu 2: lấy json từ local storage --> danh sách dói tượng */
+        var jsonDanhSachSanPhamLayTuLocalStorage = localStorage.getItem('danhSachSanPham');
+        var jsonDanhSachSanPhamTuLocaleStorage = JSON.parse(jsonDanhSachSanPhamLayTuLocalStorage);
+        console.log('danh sách đc load từ local storage là: ');
+        console.log(jsonDanhSachSanPhamTuLocaleStorage);
+
+        /* mục tiêu : tạo danh sách sản phẩm 
+        output: dnah sách sản phẩm  */
+        function taoDanhSachSanpham() {
+            var danhSachSanPham = new Array();
+            /*var iphone5 = new Object();
+            iphone5.hinhAnh = 'https://vnn-imgs-f.vgcloud.vn/2018/07/10/16/hinh-anh-iphone-x-plus-voi-3-camera-sau-khien-cac-fan-phat-cuong-1.jpg';
+            iphone5.ten = "Iphone 5";
+            iphone5.giaGoc = 5000000;
+            iphone5.phamTramGiaGiam = 10;
+            iphone5.khuVuc = 'Hà Nội';*/
+            var sanPhamIphone5 = sanPhamLa("Iphone 5", 'https://sa.nhattao.com/2015/08/2962911_4bb7f205a7c61c57353bcf166f663e58.JPG', 5000000, 30);
+
+            for (var i = 0; i < 1; i++) {
+                danhSachSanPham.push(sanPhamIphone5);
+            }
+            return danhSachSanPham;
+        }
+    </script>
+</body>
+</html>

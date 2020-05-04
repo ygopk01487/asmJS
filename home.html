@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM giai đoạn 1</title>
+    <script src="https://kit.fontawesome.com/e2d6fa8944.js" crossorigin="anonymous"></script>
+    <script src="hotro.js"></script>
+    <script src="san_pham.js"></script>
+    <script src="gio_hang_sp.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="khung-tren">
+            <div class="khung-logo-menu">
+                <div class="khung-logo">
+                    <a href="home.html">
+                        <div class="logo">
+                            <img src="images/logo.png" width="160px">
+                       </div>
+                    </a>
+                    <form class="tim-kiem">
+                        <input type="text" placeholder="Bạn tìm gì..">
+                        <button class="btn"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="khung-chua">
+                    <div class="menu">
+                        <nav class="nav-bar">
+                            <ul class="menu-level-1">
+                                <li class="item-level-1">
+                                    <a href="#" class="item-level-1-title">ĐIỆN THOẠI</a>
+                                    <ul class="menu-level-2">
+                                        <li class="item-level-2">
+                                            <a href="#" class="item-level-2-title">Iphone</a>
+                                        </li>
+                                        <li class="item-level-2">
+                                            <a href="#" class="item-level-1-title">SamSung</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="item-level-1">
+                                    <a href="#" class="item-level-1-title">TABLET</a>
+                                </li>
+                                <li class="item-level-1">
+                                    <a href="#" class="item-level-1-title">LAPTOP</a>
+                                </li>
+                                <li class="item-level-1">
+                                    <a href="#" class="item-level-1-title">ĐỒNG HỒ</a>
+                                </li>
+                                <li class="item-level-1">
+                                    <a href="#" class="item-level-1-title">CŨ GIÁ RẺ</a>
+                                </li>
+                                <li class="item-level-1">
+                                    <a href="#" class="item-level-1-title">CÔNG NGHỆ</a>
+                                </li>
+                                <li class="item-level-1">
+                                    <a href="#" class="item-level-1-title">MỤC KHÁC</a>
+                                    <ul class="menu-level-2">
+                                        <li class="item-level-2">
+                                            <a href="#" class="item-level-2-title">Sim, thẻ cào</a>
+                                        </li>
+                                        <li class="item-level-2">
+                                            <a href="#" class="item-level-2-title">Đóng tiền điện, nước, trả góp</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+                    </div>
+                    <div class="gio-Hang">
+                        <a href="#">
+                            <img src="images/giohang.png" width="30px">
+                        
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-thong-tin">
+            <div class="slider">
+                <div name="slider-item" class="slider-item">
+                    <img src="https://cdn.tgdd.vn/2020/04/banner/800-300-800x300-33.png" width="680px" height="370px">
+                </div>
+                <div name="slider-item" class="slider-item">
+                    <img src="https://cdn.tgdd.vn/2020/04/banner/a9new2f-800-300-800x300.png" width="680px" height="370px">
+                </div>
+                <div name="slider-item" class="slider-item">
+                    <img src="https://cdn.tgdd.vn/2020/04/banner/a51-800-300-800x300.png" width="680px" height="370px">
+                </div>
+                <a class="sau" onclick="onClickXemAnhSau()">&#10094;</a>
+                <a class="truoc" onclick="onClickXemAnhTruoc()">&#10095;</a>
+
+            </div>
+            <div class="thong-tin">
+                <div class="cong-nghe-1">
+                    <a href="#"><img src="https://cdn.tgdd.vn/2020/04/banner/sticky-a31-11-398-110-398x110.png" width="410" height="110px"></a>
+                </div>
+                <div class="cong-nghe-2">
+                    <a href="#"><img src="https://cdn.tgdd.vn/2020/04/banner/398-110-398x110-3.png" width="410" height="110px"></a>
+                </div>
+                <div class="cong-nghe-3">
+                    <a href="#"><img src="https://cdn.tgdd.vn/Files/2020/04/28/1252375/laptople_800x450.jpg" width="410" height="110px"></a>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <section>
+        <div id="khung-san-pham">
+            <div id="khung-chua">
+                <main>
+                    <div id="hien-thi-san-pham">
+            
+                    </div>
+                </main>
+            </div>
+      
+        </div>
+    </section>
+    <footer>
+        <div id="khung-duoi">
+              <div class="khung-chua-duoi">
+                  <div class="khung-chua-duoi-1">
+                      <ul>
+                          <li><a href="#">Tìm hiểu về mua trả góp</a></li>
+                          <li><a href="#">Chính sách bảo hành</a></li>
+                          <li><a href="#">Chính sách đối trả</a></li>
+                          <li><a href="#">Giao hàng & Thanh toán</a></li>
+                      </ul>
+                  </div>
+                  <div class="khung-chua-duoi-2">
+                    <ul>
+                        <li><a href="#">Giới thiệu công ty</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Gửi góp ý, kiếu nại</a></li>
+                        <li><a href="#">Tìm siêu thị (2.021 shop)</a></li>
+                        <li><a href="#">Xem bản moblie</a></li>
+                    </ul>
+
+                  </div>
+                  <div class="khung-chua-duoi-3">
+                      <div class="khung-chua-chu-2">
+                          <ul>
+                              <li>Gọi hàng mua</li>
+                              <li>Gọi khiếu nại</li>
+                              <li>Gọi bảo hành</li>
+                              <li>Kỹ thuật</li>
+                              <li><a href="#"><img src="images/icon11.png" width="90px"></a></li>
+                          </ul>
+                      </div>
+                      <div class="khung-chua-chu-3">
+                          <ul>
+                            <li><a href="#">1800.1060</a></li>
+                            <li><a href="#">1800.1062</a></li>
+                            <li><a href="#">1800.1064</a></li>
+                            <li><a href="#">1800.1763</a></li>
+                            <li><a href="#"><img src="images/bct.png" width="30px"></a></li>
+                          </ul>
+                      </div>
+                      <div class="khung-chua-chu-4">
+                          <ul>
+                              <li>(7:30-22:00)</li>
+                              <li>(8:00-21:30)</li>
+                              <li>(8:00-21:00)</li>
+                              <li>(7:30-22:00)</li>
+                              <li><a href="#"><img src="images/icon22.png" width="60px"></a></li>
+                          </ul>
+                      </div>
+
+                  </div>
+                   <div class="khung-chua-duoi-4">
+                       <ul>
+                           <li>Website cùng tập đoàn:</li>
+                           <li><a href="#"><img src="images/dmx.jpg" width="80px" height="30px"></a></li>
+                           <li><a href="#"><img src="images/bhx.jpg" width="80px" height="35px"></a></li>
+                       </ul>
+
+                  </div>
+              </div>
+              <div class="khung-chua-duoi-1-1">
+                  <div class="khung-chua-chu">
+                      <div class="khung-chua-chu-1">
+                        <p>© 2019. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH & ĐT TP.HCM cấp ngày 02/01/2007. Địa chỉ: 128 Trần Quang Khải, P. Tân Định, Q.1, TP.Hồ Chí Minh. Điện thoại: 18001060. Email: cskh@thegioididong.com. Chịu trách nhiệm nội dung: Trần Nhật Linh. Xem chính sách sử dụng web</p>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </footer>
+
+    <script>
+        if (danhSachSanPham == null)
+            danhSachSanPham = new Array();
+        var json = localStorage.getItem("danhSachSanPham");
+        var danhSachSanPham = JSON.parse(json);
+        console.log(danhSachSanPham);
+        var HTML = chuyenDoiDanhSachSanPhamThanhHTML(danhSachSanPham);
+        var nodeHienThiSanPham = document.getElementById('hien-thi-san-pham');
+        nodeHienThiSanPham.innerHTML = HTML;
+
+        function onClickDuaVaoGioHang(idSanPham) {
+            alert('Click đưa vào giỏ hàng của sản phẩm là: ' + idSanPham);
+            
+            /* Bước 1: Định hình đối tuiơngj giỏ hàng gồm những gì 
+            1. ID của sản phẩm --> sản phẩm nào
+            2. số lượng là bao nhiêu*/
+
+            /* Bước 2: Tạo ra 1 hàm tạo nhanh đối tượng giỏ hàng */
+
+            /* Bước 3: lấy danh sách sản phẩm trong gior hàng từ local storage lên*/
+
+            /* BƯớc 4: Kiểm tra xem sản phẩm đã tồn tại ktrong giỏ hàng chưa */
+
+            /* Buyơcs 5: Nếu đã tồn tại thì tăng số lươngnj lên */
+
+            /* Bước 6: Nếu chưua tồn tại thì thêm sản phẩm đó vào giỏ hàng (số lương mặc định là 1) */
+            var danhSachItemGioHang = layGioHangTuLocalStorage();
+            var coTonTaiTrongItemGioHang = false;
+            for (var i = 0; i< danhSachItemGioHang.length; i++) {
+                var itemHienTai = danhSachItemGioHang[i];
+                if (danhSachItemGioHang[i].idSanPham == idSanPham) {
+                    danhSachItemGioHang[i].soLuong++;
+                    coTonTaiTrongItemGioHang = true;
+                }
+                console.log(danhSachItemGioHang[i].idSanPham);
+            }
+            if (coTonTaiTrongItemGioHang == false) {
+                var itemGioHang = TaoDoiTuongItemGiohang(idSanPham, 1);
+                danhSachItemGioHang.push(itemGioHang);
+                
+                
+            }
+            /*var danhSachItemGioHangSauKhiThem = themVaoGioHang(idSanPham, danhSachItemGioHang);
+            console.log('danh sách item giỏ hàng sau khi đc thêm là: ')
+            console.log(danhSachItemGioHangSauKhiThem);*/
+            luuGioHangXuongLocalStorage(danhSachItemGioHang);
+        }
+        var viTriSliderItemHienTai = 1;
+        /* Trả về tất cả các danh sách sliedr-item */
+        var danhSachSliderItem = document.getElementsByName('slider-item');
+        console.log(danhSachSliderItem);
+        hienThiSliderItem(viTriSliderItemHienTai);
+
+        function onClickXemAnhSau() {
+            /* b1: thay đổi vị trị hiển thị hiẹn tại cảu slider item
+                   vị trí hiển thị mới = vị trícũ + 1
+                   Nếu vị trí cũ là slider item cuối cùng thì vị trí = 0 */
+            viTriSliderItemHienTai = viTriSliderItemHienTai + 1;
+            if (viTriSliderItemHienTai == danhSachSliderItem.length) {
+                viTriSliderItemHienTai = 0;
+            }
+            hienThiSliderItem(viTriSliderItemHienTai);
+        }
+        function onClickXemAnhTruoc() {
+            /* b1: thay đổi vị trị hiển thị hiẹn tại cảu slider item
+                   vị trí hiển thị mới = vị trí cũ - 1
+                   Nếu vị trí cũ l< 0 thì vị trí mới = danhSachItem.length - 1*/
+            viTriSliderItemHienTai = viTriSliderItemHienTai - 1;
+            if (viTriSliderItemHienTai < 0) {
+                viTriSliderItemHienTai = danhSachSliderItem.length - 1;
+            }
+            hienThiSliderItem(viTriSliderItemHienTai);
+        }
+
+        /* Mô tả: hiển thị slider-item theo vị trí truyền vào */
+        function hienThiSliderItem(viTri) {
+            /* B1: ẩn toàn bộ các slider trước đó */
+            for (var i = 0; i < danhSachSliderItem.length; i++) {
+                danhSachSliderItem[i].style.display = 'none';
+            }
+
+            /* B2: Hiển thị lên slider item theo vị trí truyền vào */
+            danhSachSliderItem[viTri].style.display = 'block';
+        }
+
+    </script>
+</body>
+
+</html>
